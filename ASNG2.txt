@@ -1,0 +1,232 @@
+Q1. What is the purpose of Python's OOP?
+
+Python's OOP (Object-Oriented Programming) allows the creation of modular, reusable and maintainable code by organizing data and functions into objects. The main purpose of Python's OOP is to provide a way to create code that is easy to understand, modify, and extend. It also allows the creation of complex applications by breaking them down into smaller, more manageable objects that can interact with one another.
+
+Q2. Where does an inheritance search look for an attribute?
+
+In Python's inheritance search, the search for an attribute begins in the instance object itself. If the attribute is not found in the instance object, it looks for the attribute in the class of the instance object. If the attribute is not found in the class, it looks for the attribute in the base class or parent class. The search continues up the hierarchy of classes until the attribute is found or the search is exhausted.
+
+Q3. How do you distinguish between a class object and an instance object?
+
+In Python, a class is a blueprint or template for creating objects. It is a collection of methods and variables that define the behavior of the objects created from the class. An instance object, on the other hand, is a specific object created from a class.
+
+To distinguish between a class object and an instance object, we can compare their attributes. The attributes of a class object are shared among all instances created from the class. On the other hand, the attributes of an instance object are unique to that instance and can be different from other instances created from the same class.
+
+Q4. What makes the first argument in a class’s method function special?
+
+In Python, the first argument in a class's method function is always the instance object itself and is conventionally named 'self'. This is a reference to the instance of the class on which the method is being called. It allows the method to access and manipulate the instance variables and methods of the class. The 'self' parameter is required in all instance method functions, and Python automatically passes the instance object as the first argument when the method is called.
+
+Q5. What is the purpose of the init method?
+
+The __init__ method is a special method in Python classes that is called when an instance of the class is created. The purpose of the __init__ method is to initialize the attributes of the instance. It is used to define and set the initial values of the instance variables of a class.
+
+The __init__ method takes at least one argument, which is the instance object itself (conventionally named as self), and can also take additional arguments to set the values of instance variables. The __init__ method is optional, but it is commonly used to ensure that the instance is initialized with the required attributes before it can be used.
+Q6. The process for creating a class instance involves calling the class name followed by parentheses containing any necessary arguments. This creates an object of the class, which is an instance.
+
+Q7. The process for creating a class involves using the "class" keyword followed by the class name and a colon. The class body includes any attributes and methods that the class will have.
+
+Q8. The superclasses of a class, also known as parent classes or base classes, are defined using inheritance. In Python, a class can inherit from one or more superclasses by including them in parentheses after the class name in the class definition.
+
+Q9. Classes and modules are both used for organizing code, but they serve different purposes. A module is a file containing Python code that can be imported and used in other Python programs. A class is a type of object that can be used to create instances, which are also objects, and can contain attributes and methods.
+
+Q10. To create an instance of a class, you call the class name followed by parentheses containing any necessary arguments. To create a class, you use the "class" keyword followed by the class name and a colon, and then define the class body with any attributes and methods.
+
+Q11. Where and how should be class attributes created?
+
+Class attributes should be created inside the class definition, outside any method or function. They are created by simply assigning a value to a variable name, and can be accessed using the class name or any instance of the class.
+
+Q12. Where and how are instance attributes created?
+
+Instance attributes are created inside the methods of a class, or outside the methods by assigning a value to the instance variable name using self. They are created for each individual instance of a class, and can vary from instance to instance.
+
+Q13. What does the term "self" in a Python class mean?
+
+"self" is a special variable in Python that refers to the instance of the class. It is used within a class to refer to the instance's attributes and methods. When a method is called on an instance, Python automatically passes the instance as the first argument to the method and assigns it to the "self" parameter.
+
+Q14. How does a Python class handle operator overloading?
+
+Python allows operator overloading, which means that a class can define its own behavior for built-in operators like +, -, *, /, <, >, etc. This is done by implementing special methods that correspond to these operators. For example, the add method can be used to define the behavior of the + operator.
+
+Q15. When do you consider allowing operator overloading of your classes?
+
+Operator overloading can be useful when working with custom objects that have a natural mathematical or logical meaning. For example, if you are working with a class that represents a vector in 2D space, it may make sense to overload the + operator to allow vector addition. However, it is important to use operator overloading judiciously, as it can make code harder to read and understand if not used appropriately.
+
+Q16. The most popular form of operator overloading is the "+" operator, which is used to concatenate sequences, add numbers, and perform other types of operations.
+
+Q17. The two most important concepts to grasp in order to comprehend Python OOP code are classes and objects. A class is a blueprint or a template for creating objects, and an object is an instance of a class that has its own unique data and behaviors.
+
+Q18. Three applications for exception processing are:
+
+Handling input errors and validating user input
+Recovering from unexpected errors or failures during program execution
+Implementing error handling in library or module code to provide useful feedback to developers who use the code
+Q19. If an exception is not handled in a script, the program will terminate with an error message and a traceback showing the line where the exception occurred.
+
+Q20. The options for recovering from an exception in a script include catching and handling the exception using a try-except block, logging the error and continuing program execution, raising a different exception, or gracefully terminating the program. The appropriate option depends on the nature of the exception and the requirements of the program.
+
+Q21. Two methods for triggering exceptions in your script are:
+
+Using the raise statement: You can manually raise an exception by using the raise keyword followed by an instance of an exception class. For example, raise ValueError("Invalid input").
+Using the assert statement: You can use the assert statement to test if a condition is True, and if not, raise an AssertionError. For example, assert x >= 0, "x must be non-negative"
+Q22. Two methods for specifying actions to be executed at termination time are:
+
+Using the finally block: The finally block is used to specify cleanup code that should be executed regardless of whether an exception was raised or not. For example:
+makefile
+Copy code
+try:
+# some code that might raise an exception
+except:
+# exception handling code
+finally:
+# cleanup code that will always execute
+Using the atexit module: The atexit module provides a way to register functions that should be called when the Python interpreter exits. For example, atexit.register(my_cleanup_function).
+Q23. The purpose of the try statement in Python is to handle exceptions. The try statement allows you to specify a block of code that might raise an exception, and a block of code to handle that exception if it occurs.
+
+Q24. The two most popular try statement variations are:
+
+The try/except statement: This allows you to catch and handle specific exceptions that might be raised in the try block. For example:
+python
+Copy code
+try:
+# some code that might raise an exception
+except ValueError:
+# handle ValueError exception
+except:
+# handle all other exceptions
+The try/finally statement: This allows you to specify cleanup code that should be executed regardless of whether an exception was raised or not. For example:
+makefile
+Copy code
+try:
+# some code that might raise an exception
+finally:
+# cleanup code that will always execute
+Q25. The purpose of the raise statement is to manually raise an exception. You can use the raise keyword followed by an instance of an exception class to raise an exception. For example, raise ValueError("Invalid input").
+
+Q26. The assert statement is used to test if a condition is True, and if not, raise an AssertionError. The assert statement is similar to an if statement, but raises an exception if the condition is False. For example, assert x >= 0, "x must be non-negative" is equivalent to:
+
+css
+Copy code
+if x < 0:
+raise AssertionError("x must be non-negative")
+Q27. The purpose of the with/as argument is to simplify the management of resources that need to be acquired and released. The with statement creates a context in which the resource is acquired at the beginning of the block and released at the end of the block, regardless of whether an exception was raised. The with/as argument is similar to the try/finally statement, but it is more concise and easier to read. For example:
+
+python
+Copy code
+with open("file.txt", "r") as f:
+# some code that uses the file object
+is equivalent to:
+
+makefile
+Copy code
+f = open("file.txt", "r")
+try:
+# some code that uses the file object
+finally:
+f.close()
+
+Q28. *args and **kwargs are special syntax in Python used to pass a variable number of arguments to a function. The *args syntax allows a function to accept any number of positional arguments and packs them into a tuple. The **kwargs syntax allows a function to accept any number of keyword arguments and packs them into a dictionary.
+
+Q29. In Python, optional and keyword parameters can be passed from one function to another by using the *args and **kwargs syntax. When calling the second function, the *args syntax can be used to pass optional parameters as a tuple, and the **kwargs syntax can be used to pass keyword parameters as a dictionary.
+
+For example:
+
+python
+Copy code
+def func1(*args, **kwargs):
+func2(*args, **kwargs)
+
+def func2(arg1, arg2, kwarg1=None, kwarg2=None):
+# do something
+Q30. Lambda functions are anonymous functions in Python that are defined using the lambda keyword. They are typically used for small, one-time-use functions and can take any number of arguments. The syntax for a lambda function is lambda arguments: expression.
+
+For example:
+
+makefile
+Copy code
+
+define a lambda function to multiply two numbers
+multiply = lambda x, y: x * y
+
+call the lambda function
+result = multiply(2, 3)
+print(result) # output: 6
+Q31. Inheritance is a mechanism in Python that allows a class to inherit the properties and methods of another class. The class that is being inherited from is called the superclass or base class, and the class that inherits from it is called the subclass or derived class. Inheritance is used to promote code reuse and to create a hierarchy of related classes.
+
+Here's an example:
+
+ruby
+Copy code
+class Animal:
+def init(self, name):
+self.name = name
+
+def speak(self):
+    raise NotImplementedError("Subclass must implement abstract method")
+class Dog(Animal):
+def speak(self):
+return "Woof"
+
+class Cat(Animal):
+def speak(self):
+return "Meow"
+In this example, the Animal class is the superclass, and the Dog and Cat classes are subclasses. The Dog and Cat classes inherit the name property and speak() method from the Animal class, but they each provide their own implementation of the speak() method.
+
+Q32. If the func() method is defined in both classes A and B, and class C inherits from both A and B as class C(A,B), the version of the func() method that gets invoked when calling func() from an object of class C depends on the method resolution order (MRO). The MRO is determined at runtime and is based on the order of the base classes specified in the subclass definition.
+
+Q33. The isinstance() and issubclass() functions are used to determine the type of an instance and its inheritance, respectively. The isinstance() function returns True if an object is an instance of a particular class, or a subclass of that class. The issubclass() function returns True if a class is a subclass of another class.
+
+For example:
+
+python
+Copy code
+class A:
+pass
+
+class B(A):
+pass
+
+a = A()
+b = B()
+
+check if a is an instance of class A or its subclasses
+print(isinstance(a, A)) # output: True
+print(isinstance(b, A)) # output: True
+print(isinstance(a, B)) # output: False
+
+check if B is a subclass of
+
+Q34. The nonlocal keyword in Python is used to declare that a variable being referenced in a nested function is a non-local variable. It is used when we want to assign a value to a variable in the outer (enclosing) scope, but not in the global scope. In other words, the nonlocal keyword allows us to access a variable defined in the nearest enclosing scope that is not the global scope.
+
+For example:
+
+python
+Copy code
+def outer():
+x = "outer"
+
+def inner():
+    nonlocal x
+    x = "inner"
+
+inner()
+print(x)
+outer() # Output: inner
+Here, the nonlocal keyword allows the inner() function to modify the value of the x variable defined in the outer() function.
+
+Q35. The global keyword is used to declare that a variable is a global variable, meaning it can be accessed and modified from anywhere in the code. If we want to modify the value of a global variable from within a function, we need to use the global keyword to tell Python that we want to use the global variable, not create a new local variable with the same name.
+
+For example:
+
+python
+Copy code
+x = 10
+
+def my_function():
+global x
+x = 5
+print(x)
+
+my_function() # Output: 5
+print(x) # Output: 5
+Here, we use the global keyword to modify the value of the global variable x from within the my_function() function. The output of the function call is 5, and when we print the value of x outside the function, we also get 5.
+
